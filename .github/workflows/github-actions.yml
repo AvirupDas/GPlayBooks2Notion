@@ -1,0 +1,21 @@
+name: GitHub Actions to Execute Script
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '30 5 * * *'
+env:
+  CheckoutDir: GPlayBooks2Notion
+
+jobs:
+  SyncData:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check-out repository
+      uses: actions/checkout@v2
+      with:
+        repository: AvirupDas/GPlayBooks2Notion
+        path: ${{ env.CheckoutDir }}
+
+    - name: Execute
+      run: python ${{ env.CheckoutDir }}/books2notion.py --mode sync
+      shell: sh
