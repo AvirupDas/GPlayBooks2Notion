@@ -38,13 +38,13 @@ async def validate_time_diff(doc):
         if time_diff >= 0 or full_sync_bool:
             logger.info("New changes found or full_sync mode is enabled, intitiializing syncing process")
             return_info = {
-                    "page_id":notion_last_sync_info["page_id"],
-                    "progress_no":notion_last_sync_info["progress_no"],
-                    "parsed_chapters":notion_last_sync_info["parsed_chapters"],
-                    "parsed_highlights":notion_last_sync_info["parsed_highlights"],
-                    "parsed_notes":notion_last_sync_info["parsed_notes"],
-                    "parsed_new_words":notion_last_sync_info["parsed_new_words"],
-                    "full_sync_bool":full_sync_bool
+                    "page_id":notion_last_sync_info["page_id"]
+                    # "progress_no":notion_last_sync_info["progress_no"],
+                    # "parsed_chapters":notion_last_sync_info["parsed_chapters"],
+                    # "parsed_highlights":notion_last_sync_info["parsed_highlights"],
+                    # "parsed_notes":notion_last_sync_info["parsed_notes"],
+                    # "parsed_new_words":notion_last_sync_info["parsed_new_words"],
+                    # "full_sync_bool":full_sync_bool
             }
             return return_info
         else:
