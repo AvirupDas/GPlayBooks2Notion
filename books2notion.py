@@ -28,7 +28,7 @@ async def validate_time_diff(doc):
     if notion_last_sync_info is not None:
         logger.info(f"Found existing notion page having docs_id - {doc['docs_id']}")
         notion_last_sync_time = notion_last_sync_info["last_sync_time"]
-        full_sync_bool = notion_last_sync_info["full_sync_bool"]
+        full_sync_bool = False
         notion_time_string = notion_last_sync_time[:-10]
         doc_time_string = doc["modified_time"][:-5]
         notion_time = datetime.strptime(notion_time_string,"%Y-%m-%dT%H:%M:%S")
