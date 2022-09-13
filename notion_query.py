@@ -198,7 +198,7 @@ class notion_client:
                         {
                             "type": "text",
                             "text": {
-                                "content": "Book from Kindle"
+                                "content": "Book from Google"
                             }
                         },
                     ]
