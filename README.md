@@ -1,10 +1,10 @@
 # Books2Notion
 **Python script for syncing Google Play Books Highlights to Notion**
 #### **[Demo Notion pages with highlights](https://quark-plane-15f.notion.site/4bd2a74b373a48f488a6ba86eb2b309c?v=4d15601367de4de3a72c8ac903cce14a "Notion pages containing highlights")**
-[![Google Play Books](https://i.imgur.com/42ozIyz.png "Google Play Books")](https://i.imgur.com/42ozIyz.png "Google Play Books")
-[![Notion Notes](https://i.imgur.com/qgQUpSf.png "Notion Notes")](https://i.imgur.com/qgQUpSf.png "Notion Notes")
+[![Google Play Books](/repository/assets/GPlayBooksSyncSample.png "Google Play Books")](repository/assets/GPlayBooksSyncSample.png "Google Play Books")
+[![Notion Notes](/repository/assets/NotionSyncSample.png "Notion Notes")](/repository/assets/NotionSyncSample.png "Notion Notes")
 
----
+----------------------------------------------------------------------
 
 ### Table of Contents
 - [Books2Notion](#books2notion)
@@ -53,7 +53,7 @@ Red highlights are reserved for saving new words, it gets added to 'New Words' d
 
 ### Automatic
 Follow [7. Schedule script](#7-schedule-script) to schedule .Script is scheduled to run every hour in `append` mode. Enable  _Full_Sync_ checkbox for books in the database if you want to  run  the script in `sync-full` mode in the next scheduled run. 
-<img src=https://i.imgur.com/7DQVufc.png width=350px>
+![FullSync](/repository/assets/FullSync.png "FullSync")
 
 ### Run Manually
 Clone `manual` branch
@@ -87,58 +87,60 @@ pip install schedule
 ### 3.Authorize Notion
 #### a. Get Notion Integration Token
 **Goto https://www.notion.so/my-integrations and make an integration, give it a name submit with default settings.**    
-<img src=https://i.imgur.com/xVjkwlr.png width="300">       
-<img src=https://i.imgur.com/GhAh9ew.png width="300">      
-<img src=https://i.imgur.com/uQcKblG.png width="400">     
+
+![NotionIntegration-1](/repository/assets/NotionIntegration-1.png "NotionIntegration-1")
+![NotionIntegration-2](/repository/assets/NotionIntegration-2.png "NotionIntegration-2")
+![NotionIntegration-3](/repository/assets/NotionIntegration-3.png "NotionIntegration-3")
 
 **Copy the integration token and save it somewhere.**   
 #### b. Duplicate template and share it to integration
 **Duplicate [ books template](https://quark-plane-15f.notion.site/4bd2a74b373a48f488a6ba86eb2b309c?v=4d15601367de4de3a72c8ac903cce14a " books template") and `share -> invite -> integration_name -> invite`**  
-<img src=https://i.imgur.com/2mcGWGE.png width="450">        
-<img src=https://i.imgur.com/Ynp1bld.png width="350">      
-<img src=https://i.imgur.com/lTVMfxk.png width="350">      
+
+![NotionDatabaseShare1](/repository/assets/NotionDatabaseShare1.png "NotionDatabaseShare1")
+![NotionDatabaseShare2](/repository/assets/NotionDatabaseShare2.png "NotionDatabaseShare2")
+![NotionDatabaseShare3](/repository/assets/NotionDatabaseShare3.png "NotionDatabaseShare3")
 
 ### 4. Authorize Google APIs
 #### a. Create Google cloud project
 **Goto https://console.cloud.google.com/ then click 'select a project'**   
-<img src=https://i.imgur.com/M2Gg9uO.png width="350">      
-<img src=https://i.imgur.com/xMKy2Ug.png width="350">          
+![GCloudProject1](/repository/assets/GCloudProject1.png "GCloudProject1")
+![GCloudProject2](/repository/assets/GCloudProject2.png "GCloudProject2")
 
 **Give the project a name and click create**        
-<img src=https://i.imgur.com/sz1an2k.png width="350">    
+![GCloudProject3](/repository/assets/GCloudProject3.png "GCloudProject3")
  
 #### b. Create OAuth consent screen    
-<img src=https://i.imgur.com/8BDKHyU.png width="350">     
-<img src=https://i.imgur.com/Duc8REO.png width="350">     
+![GCloudConsent1](/repository/assets/GCloudConsent1.png "GCloudConsent1")
+![GCloudConsent2](/repository/assets/GCloudConsent2.png "GCloudConsent2")
 
 **Fill 'name' and 'user support email'**    
-<img src=https://i.imgur.com/9zYBVhD.png width="350">     
+![GCloudConsent3](/repository/assets/GCloudConsent3.png "GCloudConsent3")
 
 **Scroll down fill in 'Email address' and continue**     
-<img src=https://i.imgur.com/xeXx9zi.png width="350">         
+![GCloudConsent4](/repository/assets/GCloudConsent4.png "GCloudConsent4")
 **click 'save and continue' for 'Scopes' and 'Test Users', don't have to fill in anything**        
-<img src=https://i.imgur.com/bmQhPrU.png width="350">     
+![GCloudConsent5](/repository/assets/GCloudConsent5.png "GCloudConsent5")
 **Publish app**     
-<img src=https://i.imgur.com/8PJPZib.png width="350">   
-<img src=https://i.imgur.com/55Lk6L9.png width="350">   
+![GCloudConsent6](/repository/assets/GCloudConsent6.png "GCloudConsent6")
+![GCloudConsent7](/repository/assets/GCloudConsent7.png "GCloudConsent7")
 #### c. Create OAuth2.0 credentials    
-<img src=https://i.imgur.com/NvgyNEj.png width="350">     
-<img src=https://i.imgur.com/gfzNn26.png width="350">    
-<img src=https://i.imgur.com/8kvKOpn.png width="350">    
-<img src=https://i.imgur.com/caytldw.png width="350">    
-<img src=https://i.imgur.com/Jl4tImE.png width="350">    
+![GCloudCreds1](/repository/assets/GCloudCreds1.png "GCloudCreds1")
+![GCloudCreds2](/repository/assets/GCloudCreds2.png "GCloudCreds2")
+![GCloudCreds3](/repository/assets/GCloudCreds3.png "GCloudCreds3")
+![GCloudCreds4](/repository/assets/GCloudCreds4.png "GCloudCreds4")
+![GCloudCreds5](/repository/assets/GCloudCreds5.png "GCloudCreds5")
    
 **Download file and save it as `credentials.json` in the `books2notion` folder we created in [1. Clone Git repo](#1-clone-git-repo)**      
 
 #### d. Enable APIs  
 **We have to enable `Books API`, `Google Drive API` and `Google Docs API`**    
-<img src=https://i.imgur.com/yaV16Mi.png width="350">     
-<img src=https://i.imgur.com/tuDy5LM.png width="350">   
+![EnableGAPI1](/repository/assets/EnableGAPI1.png "EnableGAPI1")
+![EnableGAPI2](/repository/assets/EnableGAPI2.png "EnableGAPI2")
 
 **Search for each APIs mentioned above and enable it**   
-<img src=https://i.imgur.com/4qa3m6r.png width="350">
-<img src=https://i.imgur.com/NcZoROK.png width="350">
-<img src=https://i.imgur.com/vqJaAP6.png width="350">
+![EnableGAPI3](/repository/assets/EnableGAPI3.png "EnableGAPI3")
+![EnableGAPI4](/repository/assets/EnableGAPI4.png "EnableGAPI4")
+![EnableGAPI5](/repository/assets/EnableGAPI5.png "EnableGAPI5")
 
 ### 5. Get env variables
 #### a. Get NOTION_DATABASE_ID
@@ -151,13 +153,15 @@ https://www.notion.so/lucas-gen/e32a031992f348aeae115fe6dee8353?v=1e75f5e2b07349
 **Save the databse id somewhere**   
 #### b. Get DRIVE_FOLDER_ID  
 **Select any book from your Play Books library and open to read, you will find an option to save annotations to google drive and enable it (only have to doit once,then it will be default for everybook).**      
-<img src=https://i.imgur.com/5REwVar.png width="250">       
+
+![AllowFolderSameGBooks](/repository/assets/AllowFolderSameGBooks.png "AllowFolderSameGBooks")
+
 **Go to google drive and navigate to folder you selected for saving annotations and copy it's url.**    
 **it should look like this - `https://drive.google.com/drive/folders/<folder id>`**    
 **copy the folder id and save it somewhere**     
 #### c. Get IMAGE_HOST_KEY
 **goto https://freeimage.host/page/api?lang=en and save the api key somewhere**       
-[![](https://i.imgur.com/NoaM5ix.png)](https://i.imgur.com/NoaM5ix.png)     
+[![](/repository/assets/APIBookImage.png)](/repository/assets/APIBookImage.png)     
 #### d. Get TIME_OFFSET
 goto https://www.timeanddate.com/time/zone/ and find time offset from UTC    
 Example `+05:30`,`-04:00`
@@ -195,24 +199,24 @@ heroku create
 ```
 ##### e. Fill env variables
 goto https://dashboard.heroku.com/apps and you find your app, it might not be named `books2notion`      
-<img src=https://i.imgur.com/wDvRTcg.png width="500">      
+![HerokuDeploy1](/repository/assets/HerokuDeploy1.png "HerokuDeploy1")
 **goto settings**      
-<img src=https://i.imgur.com/7W8T9ld.png width="350">    
+![HerokuDeploy2](/repository/assets/HerokuDeploy2.png "HerokuDeploy2")
 **Reveal config vars**    
-<img src=https://i.imgur.com/tUEO567.png width="350">     
+![HerokuDeploy3](/repository/assets/HerokuDeploy3.png "HerokuDeploy3")
 **Fill in env variables we saved from [3. Get Notion Integration Token](#a-get-notion-integration-token), [5. Get env variables](#5-get-env-variables), [6. Authorize script](#6-authorize-script)**     
-<img src=https://i.imgur.com/QbIdcZL.png width="550">     
+![HerokuDeploy4](/repository/assets/HerokuDeploy4.png "HerokuDeploy4")
 ##### f. add buildback   
 **croll down and you will find option to add buildpack**   
-<img src=https://i.imgur.com/bjtJoW6.png width="550">   
-<img src=https://i.imgur.com/w3T7KFq.png width="300">   
+![HerokuDeploy5](/repository/assets/HerokuDeploy5.png "HerokuDeploy5")
+![HerokuDeploy6](/repository/assets/HerokuDeploy6.png "HerokuDeploy6")
 ##### g. deploy application
 ```
 git push heroku deployment:main
 ```
 ##### h. start dyno
 **Go to resources and toggle on dyno**   
-<img src=https://i.imgur.com/PXy68JJ.png width="550">    
+![HerokuDeploy7](/repository/assets/HerokuDeploy7.png "HerokuDeploy7")
 
 **Now that's it, we have successfully deployed application.**   
 
