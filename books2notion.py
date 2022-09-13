@@ -126,5 +126,5 @@ async def sync():
         else:
             logger.info(f"Document({doc['docs_id']}) highlights and notes are already synced with notion ")
 
-def main():
-    asyncio.run(sync())
+
+asyncio.run(sync())
