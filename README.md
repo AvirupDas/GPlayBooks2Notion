@@ -55,6 +55,9 @@ Red highlights are reserved for saving new words, it gets added to 'New Words' d
 Follow [7. Schedule script](#7-schedule-script) to schedule .Script is scheduled to run every hour in `append` mode. Enable  _Full_Sync_ checkbox for books in the database if you want to  run  the script in `sync-full` mode in the next scheduled run. 
 ![FullSync](/repository/assets/FullSync.png "FullSync")
 
+## Self Note
+Run the "manual" branch and check of all working and make similar changes on "deployment" branch and push the code in github. This would trigger auto deployment on heroku.
+
 ### Run Manually
 Clone `manual` branch
 ```
