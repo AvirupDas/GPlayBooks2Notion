@@ -16,8 +16,8 @@ class document:
         self.author = self.json["body"]["content"][2]["table"]["tableRows"][0]["tableCells"][1]["content"][1]["paragraph"]["elements"][0]["textRun"]["content"][0:-1]
         self.publisher = self.json["body"]["content"][2]["table"]["tableRows"][0]["tableCells"][1]["content"][2]["paragraph"]["elements"][0]["textRun"]["content"][0:-1]
         self.highlight_count = self.json["body"]["content"][7]["paragraph"]["elements"][0]["textRun"]["content"][0:-1]
-        self.created_by = self.json["body"]["content"][8]["paragraph"]["elements"][0]["textRun"]["content"][0:-1]
-        self.last_sync = self.json["body"]["content"][8]["paragraph"]["elements"][2]["textRun"]["content"][0:-1]
+        self.created_by = self.json["body"]["content"][9]["paragraph"]["elements"][0]["textRun"]["content"][0:-1]
+        self.last_sync = self.json["body"]["content"][9]["paragraph"]["elements"][2]["textRun"]["content"][0:-1]
 
         # Contents
         self.chapters = []
